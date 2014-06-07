@@ -31,31 +31,61 @@
 								<th class="text-center">Royalty</th>
 								<th class="text-center">Labour</th>
 								<th class="text-center">Patry's Name</th>
-								
+
 							</tr>
 						</thead>
 						<tbody>
+							<c:forEach var="dailyReport" items="${dailyReportVOList}"
+								varStatus="i">
+								<tr id='addr0'>
+								<td>${i.index+1}</td>
+								<td>${dailyReport.date}</td>
+								<td>${dailyReport.ravannaNo}</td>
+								<td>${dailyReport.vehicleRegNo}</td>
+								<td>${dailyReport.time}</td>
+								<td>${dailyReport.weight}</td>
+								<td>${dailyReport.royalty}</td>
+								<td>${dailyReport.labourName}</td>
+								<td>${dailyReport.clientName}</td>
+								</tr>
+							</c:forEach>
 							<tr id='addr0'>
 								<td>1</td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td><input type="text" name='date' placeholder='Date'
+									class="form-control datepicker" /></td>
+								<td><input type="text" name='ravannaNo'
+									placeholder='Ravanna No' class="form-control" /></td>
+								<td><select class="form-control">
+										<option value="Manakpur165">MKU M/L 165</option>
+										<option value="Manakpur166">MKU M/L 166</option>
+										<option selected value="Account Name">Gotan Stone
+											Lime Industries</option>
+								</select></td>
+								<td><input type="text" name='time' placeholder='Time'
+									class="form-control timepicker" /></td>
+								<td><input type="text" name='weight' placeholder='Weight'
+									class="form-control" /></td>
+								<td><input type="text" name='royalty' placeholder='Royalty'
+									class="form-control" /></td>
+								<td><input type="text" name='labour' placeholder='Labour'
+									class="form-control" /></td>
+								<td><input type="text" name='partyName'
+									placeholder='PartyName' class="form-control" /></td>
+
+							</tr>
+							<tr id='addr1'></tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
-			
+
 		</div>
 		<%@include file="footer.jsp"%>
 		<script type="text/javascript">
 		$(function() {
 			$("#daily-reports-tab").addClass('active');
 		    $( ".datepicker" ).datepicker();
+		    $('.multiselect').multiselect();
 		  });
 		
 	    

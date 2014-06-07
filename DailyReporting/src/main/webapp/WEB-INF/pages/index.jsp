@@ -17,6 +17,29 @@
 		<%@include file="pageHeader.jsp"%>
 		<%@include file="accordian.jsp"%>
 		<div id="contentArea">
+			<div>
+				<form class="form-inline" role="form">
+					<div class="form-group">
+						<label class="sr-only" for="reportType">Report
+							Type</label> <select class="form-control">
+							<option selected value="dailyReport">Daily Report</option>
+							<option value="monthlyReport">Monthly Report</option>
+						</select>
+					</div>
+					<div class="form-group ">
+						<input id="dateMonth" type="text" class="form-control">
+					</div>
+					<div class="checkbox">
+						<label> <select class="multiselect" multiple
+							class="form-control">
+								<option selected value="MKU165">MKU165</option>
+								<option value="MKU166">MKU166</option>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-default">Search</button>
+				</form>
+			</div>
+
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<table class="table table-striped" id="tab_logic">
@@ -31,7 +54,7 @@
 								<th class="text-center">Royalty</th>
 								<th class="text-center">Labour</th>
 								<th class="text-center">Patry's Name</th>
-								
+
 							</tr>
 						</thead>
 						<tbody>
@@ -39,57 +62,75 @@
 								<td>1</td>
 								<td><input type="text" name='date' placeholder='Date'
 									class="form-control datepicker" /></td>
-								<td><input type="text" name='ravannaNo' placeholder='Ravanna No'
-									class="form-control" /></td>
+								<td><input type="text" name='ravannaNo'
+									placeholder='Ravanna No' class="form-control" /></td>
 								<td><select class="form-control">
-					<option value="Manakpur165">MKU M/L 165</option>
-					<option value="Manakpur166">MKU M/L 166</option>
-					<option selected value="Account Name">Gotan Stone Lime Industries</option>
-				</select> </td>
-									<td><input type="text" name='time' placeholder='Time'
+										<option value="Manakpur165">MKU M/L 165</option>
+										<option value="Manakpur166">MKU M/L 166</option>
+										<option selected value="Account Name">Gotan Stone
+											Lime Industries</option>
+								</select></td>
+								<td><input type="text" name='time' placeholder='Time'
 									class="form-control timepicker" /></td>
 								<td><input type="text" name='weight' placeholder='Weight'
 									class="form-control" /></td>
 								<td><input type="text" name='royalty' placeholder='Royalty'
 									class="form-control" /></td>
-									<td><input type="text" name='labour' placeholder='Labour'
+								<td><input type="text" name='labour' placeholder='Labour'
 									class="form-control" /></td>
-								<td><input type="text" name='partyName' placeholder='PartyName'
-									class="form-control" /></td>
-								
+								<td><input type="text" name='partyName'
+									placeholder='PartyName' class="form-control" /></td>
+
 							</tr>
 							<tr id='addr1'></tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
-			<a id="add_row" class="btn btn-default pull-left">Add Row</a><a
-				id='delete_row' class="pull-left btn btn-default">Delete Row</a>
+			<a id="add_row" class="btn btn-default pull-left">Save</a>
+
 		</div>
 		<%@include file="footer.jsp"%>
 		<script type="text/javascript">
-		$(function() {
-		    $( ".datepicker" ).datepicker();
-		    $(".timepicker").timepicker();
-		  });
-		
-	     $(document).ready(function(){
-	         var i=1;
-	        $("#add_row").click(function(){
-	         $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+			$(function() {
+				$(".datepicker").datepicker();
+			    $('.multiselect').multiselect();
+			    $("#dateMonth").datepicker( {
+			        format: "mm-yyyy",
+			        viewMode: "months", 
+			        minViewMode: "months"
+			    });
+					
+			});
 
-	         $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-	         i++; 
-	     });
-	        $("#delete_row").click(function(){
-	       	 if(i>1){
-	   		 $("#addr"+(i-1)).html('');
-	   		 i--;
-	   		 }
-	   	 });
+			$(document)
+					.ready(
+							function() {
+								var i = 1;
+								$("#add_row")
+										.click(
+												function() {
+													$('#addr' + i)
+															.html(
+																	"<td>"
+																			+ (i + 1)
+																			+ "</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
 
-	   });
-		
+													$('#tab_logic')
+															.append(
+																	'<tr id="addr'
+																			+ (i + 1)
+																			+ '"></tr>');
+													i++;
+												});
+								$("#delete_row").click(function() {
+									if (i > 1) {
+										$("#addr" + (i - 1)).html('');
+										i--;
+									}
+								});
+
+							});
 		</script>
 	</div>
 </body>

@@ -19,11 +19,9 @@
 
 <!-- Entity Service Beans -->
 		    <bean id="clientService" class="com.gsli.dr.domain.service.ClientServiceImpl" />
+		    <bean id="dailyReportService" class="com.gsli.dr.domain.service.DailyReportServiceImpl" />
 		    
-<!-- Entity DAO Beans -->
-	        <bean id="clientRepository"  class="com.gsli.dr.domain.ClientRepositoryImpl"/>
-	        
+<!-- Entity DAOImpl Beans, If Any -->
 	       
-           
 </beans>
     

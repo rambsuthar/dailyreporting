@@ -13,8 +13,12 @@
 
 </script>
 <link rel="stylesheet" type="text/css" href="resources/css/gsli.min.css">
+<link rel="stylesheet" type="text/css" href="bs_select/bootstrap-select.min.css">
+<link rel="stylesheet" type="text/css" href="bs_datepicker/datepicker3.css">
 <script type="text/javascript" src="javascript/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="javascript/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript" src="bs_select/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="bs_datepicker/bootstrap-datepicker.js"></script>
 <!--  BOOTSTRAP -->
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="bs_grid/bootstrap.css">

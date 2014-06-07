@@ -21,20 +21,18 @@
 
 		<div class="account-name">
 
-			<span>Welcome</span><strong>Ram Kripal, Suthar</strong> <br />
-			Account :<strong>Gotan Stone Line Industries</strong>
+			<span>Welcome</span><strong>Ram Kripal, Suthar</strong>
 
 		</div>
 
 		<form action="#" class=" top-header-search">
 			<div class="cb"></div>
 			<div id="search">
-				<select>
+				<select class="multiselect" multiple>
 					<option value="Manakpur165">MKU M/L 165</option>
 					<option value="Manakpur166">MKU M/L 166</option>
-					<option selected value="Account Name">Gotan Stone Lime Industries</option>
-				</select> <input type="submit" value="Select"
-					class="primary-small-button submit">
+					<option selected value="Gotan Stone Lime Industries">Gotan Stone Lime Industries</option>
+				</select> <input type="submit" value="Select" class="btn btn-default">
 				<div class="cb"></div>
 			</div>
 		</form>
