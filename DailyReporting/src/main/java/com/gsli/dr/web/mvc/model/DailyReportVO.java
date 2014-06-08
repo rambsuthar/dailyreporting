@@ -9,12 +9,16 @@ public class DailyReportVO implements Serializable {
 	private String id;
 	private String date;
 	private String ravannaNo;
+	private String minesId;
 	private String minesName;
+	private String vehicleId;
 	private String vehicleRegNo;
 	private String time;
 	private String weight;
 	private String royalty;
+	private String contractorId;
 	private String labourName;
+	private String clientId;
 	private String clientName;
 	
 	public String getId() {
@@ -73,6 +77,30 @@ public class DailyReportVO implements Serializable {
 	}
 	public String getClientName() {
 		return clientName;
+	}
+	public String getMinesId() {
+		return minesId;
+	}
+	public void setMinesId(String minesId) {
+		this.minesId = minesId;
+	}
+	public String getVehicleId() {
+		return vehicleId;
+	}
+	public void setVehicleId(String vehicleId) {
+		this.vehicleId = vehicleId;
+	}
+	public String getContractorId() {
+		return contractorId;
+	}
+	public void setContractorId(String contractorId) {
+		this.contractorId = contractorId;
+	}
+	public String getClientId() {
+		return clientId;
+	}
+	public void setClientId(String clientId) {
+		this.clientId = clientId;
 	}
 	public void setClientName(String clientName) {
 		this.clientName = clientName;

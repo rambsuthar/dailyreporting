@@ -23,5 +23,9 @@ public class GSLConstants {
 		public static final String N_STRING = "N";
 		public static final String SPACE_CHARACTER = " ";
 		public static final String DAILY_REPORT_VO_LIST = "dailyReportVOList";
+		public static final String VEHICLES_LIST = "vehicleList";
+		public static final String CLIENTS_LIST = "clientsList";
+		public static final String CONTRACTORS_LIST = "contractorList";
+		public static final String DAILY_REPORT_VO = "dailyReportVO";
 
 }
