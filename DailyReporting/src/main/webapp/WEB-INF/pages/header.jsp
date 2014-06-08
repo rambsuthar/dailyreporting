@@ -13,22 +13,22 @@
 
 </script>
 <link rel="stylesheet" type="text/css" href="resources/css/gsli.min.css">
-<link rel="stylesheet" type="text/css" href="bs_select/bootstrap-select.min.css">
-<link rel="stylesheet" type="text/css" href="bs_datepicker/datepicker3.css">
-<script type="text/javascript" src="javascript/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="javascript/jquery-ui-1.10.4.min.js"></script>
-<script type="text/javascript" src="bs_select/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="bs_datepicker/bootstrap-datepicker.js"></script>
-<!--  BOOTSTRAP -->
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="bs_grid/bootstrap.css">
-<!-- Latest compiled and minified JavaScript -->
+<link rel="stylesheet" type="text/css" href="resources/bootstrap/bs_select/bootstrap-select.min.css">
+<link rel="stylesheet" type="text/css" href="resources/bootstrap/bs_datepicker/datepicker3.css">
+<link rel="stylesheet" type="text/css" href="resources/bootstrap/bs_grid/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="resources/bootstrap/bs_grid/minified/jquery.bs_grid.min.css">
+
+<script type="text/javascript" src="resources/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="resources/js/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" src="resources/bootstrap/bs_select/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="resources/bootstrap/bs_datepicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="resources/bootstrap/bs_grid/minified/jquery.bs_grid.min.js"></script>
+<script type="text/javascript" src="resources/bootstrap/bs_grid/localization/en.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-<!--  DATAGRID plugin -->
-<link rel="stylesheet" type="text/css" href="bs_grid/minified/jquery.bs_grid.min.css">
-<script type="text/javascript" src="bs_grid/minified/jquery.bs_grid.min.js"></script>
-<script type="text/javascript" src="bs_grid/localization/en.js"></script>
+
 
 <!--[if lt IE 9]>
         <script src="release/js/html5shiv.min.js"></script>

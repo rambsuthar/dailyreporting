@@ -9,7 +9,7 @@
 <html class="no-js">
 <!--<![endif]-->
 <head>
-<title>Gotan Stone Lime Industries</title>
+<title>Report Books</title>
 <%@include file="header.jsp"%>
 </head>
 <body>
@@ -17,120 +17,167 @@
 		<%@include file="pageHeader.jsp"%>
 		<%@include file="accordian.jsp"%>
 		<div id="contentArea">
-			<div>
-				<form class="form-inline" role="form">
-					<div class="form-group">
-						<label class="sr-only" for="reportType">Report
-							Type</label> <select class="form-control">
-							<option selected value="dailyReport">Daily Report</option>
-							<option value="monthlyReport">Monthly Report</option>
-						</select>
-					</div>
-					<div class="form-group ">
-						<input id="dateMonth" type="text" class="form-control">
-					</div>
-					<div class="checkbox">
-						<label> <select class="multiselect" multiple
-							class="form-control">
-								<option selected value="MKU165">MKU165</option>
+			<nav class="navbar navbar-default" role="navigation">
+				<div>
+					<form class="navbar-form navbar-left" role="form">
+						<div class="form-group">
+							<label>Create Daily Report : Date</label>
+						</div>
+						<div class="form-group ">
+							<input id="dateMonth" type="text" class="form-control datepicker">
+						</div>
+						<div class="form-group">
+							<label>Mines</label>
+						</div>
+						<div class="form-group">
+							<select id="selectedMines" class="form-control"
+								title="select mines">
+								<option>Select</option>
+								<option value="MKU165">MKU165</option>
 								<option value="MKU166">MKU166</option>
-						</select>
-					</div>
-					<button type="submit" class="btn btn-default">Search</button>
-				</form>
-			</div>
-
-			<div class="row clearfix">
+							</select>
+						</div>
+					</form>
+				</div>
+			</nav>
+			<div id="dailyEntry" class="row clearfix">
 				<div class="col-md-12 column">
 					<table class="table table-striped" id="tab_logic">
 						<thead>
 							<tr>
-								<th class="text-center">#</th>
-								<th class="text-center">Date</th>
 								<th class="text-center">Ravanna No</th>
 								<th class="text-center">Transport</th>
-								<th class="text-center">Time</th>
 								<th class="text-center">Weight</th>
 								<th class="text-center">Royalty</th>
-								<th class="text-center">Labour</th>
-								<th class="text-center">Patry's Name</th>
+								<th class="text-center">Labour Name</th>
+								<th class="text-center">Party's Name</th>
 
 							</tr>
 						</thead>
 						<tbody>
-							<tr id='addr0'>
-								<td>1</td>
-								<td><input type="text" name='date' placeholder='Date'
-									class="form-control datepicker" /></td>
-								<td><input type="text" name='ravannaNo'
-									placeholder='Ravanna No' class="form-control" /></td>
-								<td><select class="form-control">
-										<option value="Manakpur165">MKU M/L 165</option>
-										<option value="Manakpur166">MKU M/L 166</option>
-										<option selected value="Account Name">Gotan Stone
-											Lime Industries</option>
-								</select></td>
-								<td><input type="text" name='time' placeholder='Time'
-									class="form-control timepicker" /></td>
-								<td><input type="text" name='weight' placeholder='Weight'
-									class="form-control" /></td>
-								<td><input type="text" name='royalty' placeholder='Royalty'
-									class="form-control" /></td>
-								<td><input type="text" name='labour' placeholder='Labour'
-									class="form-control" /></td>
-								<td><input type="text" name='partyName'
-									placeholder='PartyName' class="form-control" /></td>
 
+							<tr>
+								
+									
 							</tr>
-							<tr id='addr1'></tr>
+
 						</tbody>
 					</table>
+					<nav class="navbar navbar-default" role="navigation">
+					<div>
+					<form:form id="createDailyEntryForm" action="create.htm"
+									method="post" commandName="dailyReportVO" class="navbar-form navbar-left" role="form"
+									enctype="multipart/form-data">
+									<div class="form-group">
+									<input id="date" name="date" type="hidden" class="form-control">
+									<form:input type="text" path='ravannaNo'
+											placeholder='Ravanna No' class="form-control" /></div>
+									<div class="form-group"><form:select path="vehicleId" class="form-control">
+											<option value="">Select</option>
+											<c:forEach var="vehicle" items="${vehicleList}" varStatus="i">
+												<option value="${vehicle.id}">${vehicle.regNumber}</option>
+											</c:forEach>
+										</form:select></div>
+
+									<div class="form-group"><form:input type="text" path='weight'
+											placeholder='Weight' class="form-control" /></div>
+									<div class="form-group"><form:input type="text" path='royalty'
+											placeholder='Royalty' class="form-control" /></div>
+									<div class="form-group"><form:select path="contractorId" class="form-control">
+											<option value="">Select</option>
+											<c:forEach var="contractor" items="${contractorList}"
+												varStatus="i">
+												<option value="${contractor.id}">${contractor.name}</option>
+											</c:forEach>
+										</form:select></div>
+									<div class="form-group"><form:select path="clientId" class="form-control">
+											<option value="">Select</option>
+											<c:forEach var="client" items="${clientsList}" varStatus="i">
+												<option value="${client.id}">${client.firmName}</option>
+											</c:forEach>
+										</form:select></div>
+					</form:form>
+					</div>
+					</nav>
 				</div>
 			</div>
 			<a id="add_row" class="btn btn-default pull-left">Save</a>
+			<div id="sPhoneFromResponse"></div>
 
 		</div>
 		<%@include file="footer.jsp"%>
 		<script type="text/javascript">
 			$(function() {
-				$(".datepicker").datepicker();
-			    $('.multiselect').multiselect();
-			    $("#dateMonth").datepicker( {
-			        format: "mm-yyyy",
-			        viewMode: "months", 
-			        minViewMode: "months"
-			    });
-					
-			});
+				$('.multiselect').multiselect({
+					nonSelectedText : 'select mines'
+				});
+				$(".datepicker").datepicker("setDate", new Date());
+				$("#dailyEntry").hide();
+				$("#add_row").hide();
+				$("#selectedMines").change(function() {
+					var item = $(this);
+					if (item.val() == "Select") {
+						$("#dailyEntry").hide();
+						$("#add_row").hide();
+					} else {
+						$("#dailyEntry").show();
+						$("#add_row").show();
+					}
+				});
 
-			$(document)
-					.ready(
-							function() {
-								var i = 1;
-								$("#add_row")
-										.click(
-												function() {
-													$('#addr' + i)
-															.html(
-																	"<td>"
-																			+ (i + 1)
-																			+ "</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+				var i = 1;
+				$("#add_row").click(function() {
+					$("#date").val($("#dateMonth").val());
+					alert($("#date").val());
+					$("#createDailyEntryForm").submit();
+				});	
+				
+				/* $('#createDailyEntryForm')
+				.submit(
+						function(event) {
 
-													$('#tab_logic')
-															.append(
-																	'<tr id="addr'
-																			+ (i + 1)
-																			+ '"></tr>');
-													i++;
-												});
-								$("#delete_row").click(function() {
-									if (i > 1) {
-										$("#addr" + (i - 1)).html('');
-										i--;
-									}
+							var date = $('#date').val();
+							var ravannaNo = $('#ravannaNo').val();
+							var vehicleId = $('#vehicleId').val();
+							var weight = $('#weight').val();
+							var royalty = $('#royalty').val();
+							var contractorId = $('#contractorId').val();
+							var clientId = $('#clientId').val();
+							var minesId = $('#selectedMines').val();
+							var json = {
+								"date" : date,
+								"ravannaNo" : ravannaNo,
+								"vehicleId" : vehicleId,
+								"weight" : weight,
+								"royalty" : royalty,
+								"contractorId" : contractorId,
+								"clientId" : clientId,
+								"minesId" : minesId
+							};
+							alert(JSON.stringify(json));
+							alert($("#createDailyEntryForm")
+									.attr("action"));
+							$.ajax({
+								
+										url : $("#createDailyEntryForm")
+												.attr("action"),
+										data : JSON.stringify(json),
+										type:"POST", 
+						                contentType: "application/json; charset=utf-8",
+										success : function(smartphone) {
+											var respContent = "";
+
+											$("#sPhoneFromResponse")
+													.html(respContent);
+										}
 								});
 
-							});
+						});
+				 */
+				
+			});
+			
+			
 		</script>
 	</div>
 </body>

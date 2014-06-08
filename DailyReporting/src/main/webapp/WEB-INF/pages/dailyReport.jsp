@@ -19,18 +19,18 @@
 		<div id="contentArea">
 			<div class="row clearfix">
 				<div class="col-md-12 column">
-					<table class="table table-striped" id="tab_logic">
+					<table class="table table-striped table-hover table-condensed" id="tab_logic">
 						<thead>
 							<tr>
-								<th class="text-center">#</th>
-								<th class="text-center">Date</th>
-								<th class="text-center">Ravanna No</th>
-								<th class="text-center">Transport</th>
-								<th class="text-center">Time</th>
-								<th class="text-center">Weight</th>
-								<th class="text-center">Royalty</th>
-								<th class="text-center">Labour</th>
-								<th class="text-center">Patry's Name</th>
+								<th class="text-left">#</th>
+								<th class="text-left">Date</th>
+								<th class="text-left">Ravanna No</th>
+								<th class="text-left">Transport</th>
+								<th class="text-left">Time</th>
+								<th class="text-left">Weight</th>
+								<th class="text-left">Royalty</th>
+								<th class="text-left">Labour</th>
+								<th class="text-left">Patry's Name</th>
 
 							</tr>
 						</thead>
@@ -86,6 +86,10 @@
 			$("#daily-reports-tab").addClass('active');
 		    $( ".datepicker" ).datepicker();
 		    $('.multiselect').multiselect();
+		    $("#tab_logic").tablesorter({
+				sortList : [ [ 0, 1 ] ],
+				widgets : [ "zebra" ]
+			});
 		  });
 		
 	    
