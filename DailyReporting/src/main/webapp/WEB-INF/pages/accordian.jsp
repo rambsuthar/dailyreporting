@@ -4,14 +4,14 @@
 
 <nav class="primary-nav">
 	<ul>
-		<li class="first"><a href="index.html"><div class="icon-home"></div></a></li>
-		<li id="daily-reports-tab" class="parent"><a href="dailyReports.htm">Daily Reports</a></li>
-
-		<li class="parent"><a href="#">View</a>
-			<ul class="subnav" style="display: none">
-				<li><a href="training materials.html">Daily Reports</a></li>
-				<li><a href="reference.html">Monthly Reports</a></li>
-			</ul></li>
+		<li class="first"><a href="index.htm"><div class="icon-home"></div></a></li>
+		<li id="daily-reports-tab" class="parent"><a href="dailyReports.htm">Daily Reports</a>
+		<ul class="subnav" style="display: none">
+				<li><a href="training materials.html">Create Daily Report</a></li>
+				<li><a href="reference.html">View Reports</a></li>
+			</ul> 
+		</li>
+			
 		<li class="parent"><a href="#">Billing</a>
 			<ul class="subnav" style="display: none">
 				<li><a href="training materials.html">View bills</a></li>

@@ -8,6 +8,7 @@ import com.gsli.dr.common.util.GSLConstants;
 import com.gsli.dr.domain.entity.Client;
 import com.gsli.dr.domain.entity.Contractor;
 import com.gsli.dr.domain.entity.DailyReport;
+import com.gsli.dr.domain.entity.MinesProduct;
 import com.gsli.dr.domain.entity.Vehicle;
 import com.gsli.dr.domain.generic.GenericEntityServiceImpl;
 import com.gsli.dr.domain.generic.GenericRepository;
@@ -61,9 +62,13 @@ public class DailyReportServiceImpl extends GenericEntityServiceImpl<DailyReport
 		dr.setRavannaNum(Long.parseLong(dailyReportVO.getRavannaNo()));
 		dr.setWeight(Long.parseLong(dailyReportVO.getWeight()));
 		dr.setRoyaltyAmount(Long.parseLong(dailyReportVO.getRoyalty()));
+		MinesProduct mp = new MinesProduct();
+		mp.setId(1001L);
+		dr.setMinesProduct(mp);
+		dr.setCreatedBy("Ram Bhagat,Suthar");
+		dr.setUpdatedBy("Ram Bhagat,Suthar");
 		
-		
-		return null;
+		return dr;
 	}
 
 }

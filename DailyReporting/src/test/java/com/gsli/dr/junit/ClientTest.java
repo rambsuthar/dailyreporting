@@ -3,6 +3,9 @@
  */
 package com.gsli.dr.junit;
 
+import java.util.Date;
+
+import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.gsli.dr.common.logger.GslLogger;
 import com.gsli.dr.domain.entity.Client;
+import com.gsli.dr.domain.entity.DailyReport;
 import com.gsli.dr.domain.service.ClientService;
 
 
@@ -33,6 +37,15 @@ public class ClientTest {
 		System.out.println(clientService.getEntityRepository().findByEntity(t).get(0).getId());
 	}
 		
+	
+	@Test
+	public void jsonSerializationTest() throws Exception {
+	     DailyReport m = new DailyReport();
+	     m.setDrDate(new Date());
+
+	     ObjectMapper mapper = new ObjectMapper();
+	     System.out.println(mapper.writeValueAsString(m));
+	}
 
 
 	/**

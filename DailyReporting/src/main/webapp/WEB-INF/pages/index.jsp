@@ -45,63 +45,80 @@
 					<table class="table table-striped" id="tab_logic">
 						<thead>
 							<tr>
-								<th class="text-center">Ravanna No</th>
-								<th class="text-center">Transport</th>
-								<th class="text-center">Weight</th>
-								<th class="text-center">Royalty</th>
-								<th class="text-center">Labour Name</th>
-								<th class="text-center">Party's Name</th>
+								<th class="text-left">Ravanna No</th>
+								<th class="text-left">Transport</th>
+								<th class="text-left">Weight</th>
+								<th class="text-left">Royalty</th>
+								<th class="text-left">Labour Name</th>
+								<th class="text-left">Party's Name</th>
 
 							</tr>
 						</thead>
 						<tbody>
 
 							<tr>
-								
-									
+
+
 							</tr>
 
 						</tbody>
 					</table>
-					<nav class="navbar navbar-default" role="navigation">
-					<div>
-					<form:form id="createDailyEntryForm" action="create.htm"
-									method="post" commandName="dailyReportVO" class="navbar-form navbar-left" role="form"
-									enctype="multipart/form-data">
-									<div class="form-group">
+					<nav class="navbar navbar-default" >
+						<div>
+							<form:form id="createDailyEntryForm" action="rest/dailyreport/create"
+								method="post" commandName="dailyReportVO"
+								class="navbar-form navbar-left" role="form"
+								enctype="multipart/form-data">
+								<div class="form-group">
+									<label>Enter : </label>
+								</div>
+								<div class="form-group ">
 									<input id="date" name="date" type="hidden" class="form-control">
 									<form:input type="text" path='ravannaNo'
-											placeholder='Ravanna No' class="form-control" /></div>
-									<div class="form-group"><form:select path="vehicleId" class="form-control">
-											<option value="">Select</option>
-											<c:forEach var="vehicle" items="${vehicleList}" varStatus="i">
-												<option value="${vehicle.id}">${vehicle.regNumber}</option>
-											</c:forEach>
-										</form:select></div>
+										placeholder='Ravanna No' class="form-control" />
+								</div>
+								<div class="form-group">
+									<form:select path="vehicleId" class="form-control">
+										<option value="">Select Reg. No.</option>
+										<c:forEach var="vehicle" items="${vehicleList}" varStatus="i">
+											<option value="${vehicle.id}">${vehicle.regNumber}</option>
+										</c:forEach>
+									</form:select>
+								</div>
 
-									<div class="form-group"><form:input type="text" path='weight'
-											placeholder='Weight' class="form-control" /></div>
-									<div class="form-group"><form:input type="text" path='royalty'
-											placeholder='Royalty' class="form-control" /></div>
-									<div class="form-group"><form:select path="contractorId" class="form-control">
-											<option value="">Select</option>
-											<c:forEach var="contractor" items="${contractorList}"
-												varStatus="i">
-												<option value="${contractor.id}">${contractor.name}</option>
-											</c:forEach>
-										</form:select></div>
-									<div class="form-group"><form:select path="clientId" class="form-control">
-											<option value="">Select</option>
-											<c:forEach var="client" items="${clientsList}" varStatus="i">
-												<option value="${client.id}">${client.firmName}</option>
-											</c:forEach>
-										</form:select></div>
-					</form:form>
-					</div>
+								<div class="form-group">
+									<form:input type="text" path='weight' placeholder='Weight'
+										class="form-control" />
+								</div>
+								<div class="form-group">
+									<form:input type="text" path='royalty' placeholder='Royalty'
+										class="form-control" />
+								</div>
+								<div class="form-group">
+									<form:select path="contractorId" class="form-control">
+										<option value="">Select Labour</option>
+										<c:forEach var="contractor" items="${contractorList}"
+											varStatus="i">
+											<option value="${contractor.id}">${contractor.name}</option>
+										</c:forEach>
+									</form:select>
+								</div>
+								<div class="form-group">
+									<form:select path="clientId" class="form-control">
+										<option value="">Select Party</option>
+										<c:forEach var="client" items="${clientsList}" varStatus="i">
+											<option value="${client.id}">${client.firmName}</option>
+										</c:forEach>
+									</form:select>
+								</div>
+							</form:form>
+						</div>
 					</nav>
 				</div>
 			</div>
-			<a id="add_row" class="btn btn-default pull-left">Save</a>
+			<a id="add_row" class="btn btn-default pull-left">
+			<span class="glyphicon glyphicon-plus"></span>
+			Save</a>
 			<div id="sPhoneFromResponse"></div>
 
 		</div>
@@ -130,8 +147,8 @@
 					$("#date").val($("#dateMonth").val());
 					alert($("#date").val());
 					$("#createDailyEntryForm").submit();
-				});	
-				
+				});
+
 				/* $('#createDailyEntryForm')
 				.submit(
 						function(event) {
@@ -174,10 +191,8 @@
 
 						});
 				 */
-				
+
 			});
-			
-			
 		</script>
 	</div>
 </body>
